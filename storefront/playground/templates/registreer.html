@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    .div1 {
+        text-align: center;
+        padding: 20px;
+    }
+    .div2 {
+        margin: 0 auto;
+        width: 25%;
+        height: 40px;
+        text-align: center;
+        color: white;
+        padding: 5px;
+        background-color: orange;
+    }
+    .col1 {
+        background-color: rgb(236, 231, 231);
+        width: 25%;
+        height: auto;
+        margin: 0 auto;
+    }
+   
+</style>
+</head>
+<body>
+    {% if messages%}
+    {% for message in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{message}}
+      </div>
+    
+    {%endfor%}
+    {%endif%}
+
+    
+    <div class="div1">
+    <h5>Ultima Casa account aanvragen</h5>
+</div>
+<div class="div2 row-4">Account
+
+</div>
+<div class="col1 col-4">
+    <form  method="post" action="{% url 'registreer' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for=""><b>Naam:</b></label>
+            <input type="text" class="form-control" placeholder="Naam" name="username" value="{{username}}">
+        </div>
+        <div class="form-group">
+            <label for=""><b>E-mailadres:</b></label>
+            <input type="email" class="form-control" placeholder="E-mailadres" name="email" value="{{email}}">
+        </div>
+        <div class="form-group">
+            <label for=""><b>Wachtwoord:</b></label>
+            <input type="password" class="form-control" placeholder="Wachtwoord" name="password" value="{{passwd}}">
+        </div>
+        <!-- <div class="form-group">
+            <label for=""><b>Mobiel telefoonnummer:</b></label>
+            <input type="text" class="form-control" placeholder="telefoonnummer" name="telefoonnummer" value="{{telefoonnummer}}">
+        </div> -->
+            <input type="submit" value="Maak een account">
+    
+</div></div>
+</form>
+</body>
+</html>

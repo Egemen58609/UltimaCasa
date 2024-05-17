@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .div1 {
+            
+            
+        }
+        .col1 {
+            margin: auto;
+        }
+
+        
+
+        input[type=button]{
+            width: 200px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    {% if messages%}
+    {% for message in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{message}}
+      </div>
+    
+    {%endfor%}
+    {%endif%}
+    
+    <div class="div1">
+    <div class="col1 col-sm-4">
+        <h3>Inloggen bij Ultima Casa</h3>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+        <div class="form-group">
+            <label for=""><b>Email:</b></label>
+            <input type="email" class="form-control" placeholder="Email" name="email1">
+        </div>
+        <div class="form-group">
+            <label for=""><b>Wachtwoord:</b></label>
+            <input type="password" class="form-control" placeholder="Wachtwoord" name="passwd">
+        </div>
+            <input type="submit" value="Inloggen">
+    
+    <div class="form-group">
+        <label for=""><p>Nog geen account?</p></label>
+        <a href="registreer"><input type="button" class="form-control" value="Maak er hier eentje aan!"></a>
+    </div></div></div>
+</form>
+   
+</body>
+</html>

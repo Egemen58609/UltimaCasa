@@ -1,0 +1,55 @@
+{% extends "header.html" %} 
+<!DOCTYPE html>
+<html lang="en">
+{% block content %} 
+<style>
+    .orange {
+        background-color: orange;
+        color:white;
+        padding: 5px;
+        border-right: solid white 2px;
+    }
+        
+    .grey1 {
+        background-color: #f2f2f2;
+        color:black;
+        padding: 5px;
+        border-right: solid white 1px;
+        border-left: solid white 1px;
+        border-bottom: solid white 1px;
+        height: 40px;
+        
+        
+    }
+    .grey1:hover {
+        opacity: 0.9;
+    }    
+    
+    
+</style>
+
+</head>
+<body>
+
+
+
+<br>
+<div class="row offset-1">
+<h2>Adressen</h2>
+</div>
+<div class="row offset-1">
+<div class="col-4 orange"><h5>Straat</h5></div>
+<div class="col-2 orange"><h5>Postcode</h5></div>
+<div class="col-2 orange"><h5>Plaats</h5></div>
+</div>
+
+{% for home in homes%}
+<div class="row offset-1">
+<div class="col-4 grey1">{{home.straat}}</div>
+<div class="col-2 grey1">{{home.postcode}}</div>
+<div class="col-2 grey1">{{home.plaats}}</div>
+<div class="col-1 text-center grey1"><a href="{{home.id}}">Verwijderen</a></div>
+</div>
+{%endfor%}
+
+{%endblock%}

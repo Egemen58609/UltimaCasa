@@ -1,0 +1,79 @@
+{% extends "header_koper.html" %} 
+<!DOCTYPE html>
+<html lang="en">
+{% block content %} 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .orange {
+            background-color: orange;
+            color:white;
+            padding: 5px;
+            border-right: solid white 2px;
+            
+            
+        }
+
+        .grey {
+            background-color: #f2f2f2;
+            color:black;
+            padding: 5px;
+            border-right: solid white 1px;
+            border-bottom: solid white 1px;
+            height: 40px;
+            
+            
+        }
+        .grey1 {
+            background-color: #f2f2f2;
+            color:black;
+            padding: 5px;
+            border-right: solid white 1px;
+            border-left: solid white 1px;
+            border-bottom: solid white 1px;
+            height: 40px;
+            
+            
+        }
+        .grey1:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <br>
+    <div class="row offset-1">
+    <h1>Deze huizen wil ik (misschien) kopen</h1></div>
+
+    <div class="row offset-1">
+        <div class="col-2 orange"><h5>Te koop sinds</h5></div>
+        <div class="col-2 orange"><h5>Straat</h5></div>
+        <div class="col-1 orange"><h5>Plaats</h5></div>
+        <div class="col-1 orange"><h5>Bod</h5></div>
+        <div class="col-2 orange"><h5>Datum bod</h5></div>
+        <div class="col-1 orange"><h5>Status</h5></div>
+        <div class="col-1 orange"><h5>bieden</h5></div>
+    </div>
+
+    {%for bieding in biedingen%}
+<div class="row offset-1">
+    <div class="col-2 grey1">{{bieding.house.datum}}</div>
+    <div class="col-2 grey">{{bieding.house}}</div>
+    <div class="col-1 grey">{{bieding.house.postcode}}, {{bieding.house.plaats}}</div>
+    <div class="col-1 grey">€{{bieding.bod}}</div>
+    <div class="col-2 grey">{{bieding.datum}}</div>
+    <div class="col-1 grey">{{bieding.status}}</div>
+    <div class="col-1 grey"><a href="{{bieding.id}}">Bieden</a></div>
+    
+</div>
+{%endfor%}
+
+
+
+</body>
+</html>
+{% endblock %}

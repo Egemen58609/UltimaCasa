@@ -1,0 +1,51 @@
+{% extends "header.html" %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>{% block content %} 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    .div2 {
+        padding: 10px;
+    }
+    .uitloggen {float: right;}
+</style>
+</head>
+<body>
+    
+    <div class="div2">
+    {% if messages%}
+    {% for message in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{message}}
+      </div>
+    
+    {%endfor%}
+    {%endif%}
+    <h1>Welcome {{username}} </h1>
+    <div class="uitloggen">
+    <a href="login"><button>Login</button></a>
+    <!-- <form action=" {% url 'logout' %}">
+    <input type="submit" name="logout" id="" value="logout">
+    </form> --> 
+    </div>
+    <br>
+    <h1>Users:</h1>
+    <hr>
+    {%for item in all%}
+    <p>{{item.username}}</p>
+    <p>{{item.email}}</p>
+    <p>{{item.password}}</p>
+    <p>rol: {{item.role}}</p>
+    
+    
+    <hr>
+    {%endfor%}
+    
+    </div>
+    
+    {% endblock %} 
+</body>
+</html>

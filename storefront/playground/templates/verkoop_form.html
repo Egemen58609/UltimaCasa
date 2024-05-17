@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<br>
+<div class="row justify-content-center">
+    <h1>Huis toevoegen</h1>
+<form action="" method="post">
+    {% csrf_token %}
+</div>
+<br>
+<div class="row justify-content-center">
+    <label for="">Datum:</label>
+</div>
+
+<div class="row justify-content-center">
+    {{form.datum}}
+</div>
+<br>
+
+
+<br>
+<div class="row justify-content-center">
+    <label for="">Straat en huisnummer:</label>
+</div>
+
+<div class="row justify-content-center">
+    {{form.straat}}
+</div>
+
+<br>
+<div class="row justify-content-center">
+    <label for="">Plaats:</label>
+</div>
+
+<div class="row justify-content-center">
+   {{form.plaats}}
+</div>
+
+<br>
+<div class="row justify-content-center">
+    <label for="">Postcode:</label>
+</div>
+
+<div class="row justify-content-center">
+    {{form.postcode}}
+</div>
+
+<br>
+<div class="row justify-content-center">
+    <input type="submit" value="verzenden">
+</div>
+
+
+
+</form>   
+</body>
+</html>

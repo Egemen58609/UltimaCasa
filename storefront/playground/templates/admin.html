@@ -1,0 +1,65 @@
+{% extends "header_admin.html" %} 
+<!DOCTYPE html>
+<html lang="en">
+{% block content %} 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+        .orange {
+            background-color: orange;
+            color:white;
+            padding: 5px;
+            border-right: solid white 2px;
+        }
+            
+        .grey1 {
+            background-color: #f2f2f2;
+            color:black;
+            padding: 5px;
+            border-right: solid white 1px;
+            border-left: solid white 1px;
+            border-bottom: solid white 1px;
+            height: 40px;
+            
+            
+        }
+        .grey1:hover {
+            opacity: 0.9;
+        }    
+        
+        
+</style>
+
+</head>
+<body>
+
+    
+
+<br>
+<div class="row offset-1">
+<h2>Statussen</h2>
+</div>
+<div class="row offset-1">
+    <div class="col-4 orange"><h5>Status</h5></div>
+    <div class="col-2 orange"><h5>StatusCode</h5></div>
+    <div class="col-2 orange"><h5></h5></div>
+    <div class="col-2 text-center orange"><h5><a href="voegen/"><button>+</button></a></h5></div>
+</div>
+
+{% for status in statussen%}
+<div class="row offset-1">
+<div class="col-4 grey1">{{status.status}}</div>
+<div class="col-2 grey1">{{status.statuscode}}</div>
+<div class="col-2 text-center grey1"><a href="{{status.id}}"><button>...</button></a></div>
+
+</div>
+{%endfor%}
+
+
+{% endblock %}
+</body>
+</html>
